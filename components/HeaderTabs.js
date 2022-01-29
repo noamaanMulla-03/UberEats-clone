@@ -1,5 +1,5 @@
 import React, { useState } from 'react';
-import { View, Text, StatusBar, TouchableOpacity, StyleSheet } from 'react-native';
+import { View, Text, TouchableOpacity, StyleSheet } from 'react-native';
 
 export default function HeaderTabs() {
     const [activeTab, setActiveTab] = useState("Delivery")
@@ -20,7 +20,6 @@ const HeaderButton = ({ buttonName, activeTab, setActiveTab }) => (
 
 const styles = StyleSheet.create({
     headerContainer: {
-        paddingTop: StatusBar.currentHeight,
         flexDirection: "row",
         alignSelf: "center"
     },
