@@ -2,7 +2,7 @@ import { View, Image, StyleSheet, TouchableOpacity, Text } from 'react-native';
 import React from 'react';
 import MaterialCommunityIcons from 'react-native-vector-icons/MaterialCommunityIcons';
 
-const localRestaurants = [
+export const localRestaurants = [
     {
         name: "Beachside Bar",
         image_url:
@@ -32,10 +32,10 @@ const localRestaurants = [
     },
 ];
 
-export default function RestaurantItems() {
+export default function RestaurantItems({ restaurantData }) {
     return (
         <TouchableOpacity style={styles.restaurantItemContainer} activeOpacity={1}>
-            {localRestaurants.map((restaurant, index) => (
+            {restaurantData.map((restaurant, index) => (
                 <View style={styles.restaurantItem} key={index}>
                     <RestaurantImage image_url={restaurant.image_url} />
                     <RestaurantInfo name={restaurant.name} rating={restaurant.rating} />
